@@ -5,7 +5,7 @@ import NewPlace from './assets/places/pages/NewPlace'
 import { Switch } from 'react-router-dom/cjs/react-router-dom.min'
 import MainNavigation from './assets/shared/component/Navigation/MainNavigation'
 
-function App() {
+const App = () => {
 
   return (
     <>
@@ -13,8 +13,12 @@ function App() {
         <MainNavigation />
         <main>
           <Switch>
-            <Route path="/" exact={true} component={Users} />
-            <Route path="/newPlace" exact={true} component={NewPlace} />
+            <Route path="/" exact> 
+              <Users />
+            </Route>
+            <Route path="/places/new" exact>
+              <NewPlace />
+            </Route>
             <Redirect to="/" />
           </Switch>
         </main>
